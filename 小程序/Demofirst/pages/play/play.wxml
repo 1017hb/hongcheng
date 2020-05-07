@@ -1,0 +1,52 @@
+<!--personal.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view>
+  <view class="shoot_row">
+    <image src="../images/s_5.jpg" mode='widthFix'></image>
+  </view>
+
+  <view class="shoot_server">
+    <view class="server_top">
+      <view class="server_icon"></view>
+      <view class="server_title">热门婚纱照</view>
+    </view>
+
+
+    <scroll-view scroll-x="true" class="service_items">
+       <block wx:for="{{service}}">
+        <view class="item" catchtap="to_shoot_detail" data-id="{{item.id}}">
+          <view class="item_img"><image src="{{item.img}}"></image></view>
+          <view class="item_tile top">{{item.title}}</view>
+          <view class="item_content">
+            <view class="content price">${{item.price}}</view>
+            <view class="content number">销量:{{item.number}}</view>
+          </view>
+        </view>
+        </block>
+    </scroll-view>
+    
+      <view class="shoot_row moddile">
+    <image src="../images/s_11.jpg" mode='widthFix'></image>
+    </view>
+
+    <view class="server_bottom">
+      <block wx:for="{{service}}">
+      <view class="bottom_item" catchtap="to_shoot_detail" data-id="{{item.id}}">
+        <view class="b_item_img">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="b_item_right">
+            <view class="item_tile bottom">{{item.title}}</view>
+              <view class="item_content">
+                <view class="content price">${{item.price}}</view>
+                <view class="content number">销量:{{item.number}}</view>
+              </view>
+            </view>
+        </view>
+      </block>
+    </view>
+    </view>
+</view>
+

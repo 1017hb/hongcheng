@@ -1,0 +1,5 @@
+<!--personal.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view>订单</view>

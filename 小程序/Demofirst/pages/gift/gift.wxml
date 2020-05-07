@@ -1,0 +1,21 @@
+<!--me.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view class="gift">
+ <block wx:for="{{gift_item}}">
+     <view class="gift-item">
+    <view class="item-img"><image src="{{item.img}}"></image></view>
+    <view class="item-bottom">
+      <view class="item-title">{{item.name}}</view>
+      <view class="item-money">{{item.price}}$</view>
+      <view class="item-bt">
+        <view class="item-number">销量:{{item.number}}</view>
+        <view class="item-shopingcat" bindtap="add_cat" data-id="{{item.id}}"><image src="../images/addcat.png"></image></view>
+      </view>
+    </view>
+  </view>
+ </block>
+ 
+</view>
+

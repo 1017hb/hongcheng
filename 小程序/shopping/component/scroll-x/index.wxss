@@ -1,0 +1,7 @@
+/**index.wxss**/
+.ico-scroll-x{
+  white-space: nowrap;
+}
+.ico-scroll-item{
+  display: inline-block;
+}

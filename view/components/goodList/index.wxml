@@ -1,0 +1,33 @@
+     <view class='goodList'>
+          <block wx:for="{{bastList}}" wx:key>
+            <navigator url='/pages/goods_details/index?id={{item.id}}' class='goodList-item' hidden="{{vip_id === item.id}}">
+              <!----> 
+              <view class='pictrue'>
+                <image src="{{item.image}}"></image>
+              </view>             
+            <view class='underline'>
+                <view class='line1'>{{item.store_name}}</view>
+                <view class='money font-color'>
+                  ￥<text class='num' wx:if="{{vip_grade === 3}}">{{item.partner}}</text>
+                  <text class='num' wx:else>{{item.price}}</text>
+                </view>
+                <view style="display:none">
+                  <view class='vip-money acea-row row-middle' wx:if='{{item.vip_price && item.vip_price > 0}}'>
+                    ￥{{item.vip_price || 0}}
+                    <image  src='/images/vip.png'></image>
+                    <text class='num'>已售{{item.sales}}{{item.unit_name}}</text>
+                    <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper cart'></view>
+                  </view>
+                  <view class='vip-money acea-row row-middle' wx:else>
+                    <view class='num'>已售{{item.sales}}{{item.unit_name}}</view>
+                    <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper cart'></view>
+                  </view>  
+                </view>
+                <view class='vip-money acea-row row-middle'>
+                  <view class='num'>已售{{item.sales}}{{item.unit_name}}</view>
+                  <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper cart'></view>
+                </view>   
+            </view>  
+      </navigator>
+  </block>   
+</view>

@@ -1,0 +1,65 @@
+<!--check.wxml-->
+
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+
+<view class="check_phone">
+  <view class="check_p">
+    <view class="top_tiem">
+      <view class="cat_p">手机号</view>
+      <view bindtap="get_keyboard" data-keyboard="phone">
+        <input
+          placeholder="请输入手机号"
+          value="{{user_phone}}"
+          maxlength="11"
+          type="number"
+          focus="{{is_keyboard_phone}}"
+          hold-keyboard="{{true}}"
+          bindinput="input_phone"
+         bindblur="blur_keyboard"
+         data-keyboard="phone"
+        ></input>
+      </view>
+    </view>
+
+   <view class="top_tiem">
+      <view class="tu_cat" bindtap="get_keyboard" data-keyboard="tucode">
+        <input 
+          placeholder="图形验证码"
+          value="{{img_code}}"
+          maxlength="4"
+          focus="{{is_keyboard_tucode}}"
+          bindinput="input_tu_code"
+          bindblur="blur_keyboard"
+          data-keyboard="tucode"
+        ></input>
+      </view>
+      <view class="tu_check" style='position:relative;margin-left:10%;margin-top:56rpx;' bindtap="onTap">
+      <canvas style="width:160rpx;height:70rpx;position:absolute;right:-66rpx;bottom:-14rpx;text-align: center;z-index:9999;" canvas-id="canvas"></canvas>
+      </view>
+    </view>
+     <view class="top_tiem">
+      <view class="cat_p">验证码</view>
+      <view class="set_vf" bindtap="get_keyboard" data-keyboard="code">
+        <input
+          placeholder="请输入验证码"
+          value="{{check_code}}"
+          maxlength="6"
+          type="number"
+          focus="{{is_keyboard_code}}"
+          bindinput="input_code"
+          bindblur="blur_keyboard"
+          data-keyboard="code"
+        ></input>
+      </view>
+      <view class="vf_cat" bindtap="setctime">{{time}}</view>
+    </view>
+  </view>
+
+  <view class="set_p">绑定手机</view>
+  <view class="set_p" bindtap="check_info">快速验证</view>
+</view>
+
+
+

@@ -1,0 +1,59 @@
+{
+  "pages": [
+  
+    "pages/index/index",
+    "pages/community/community",
+    "pages/about/about",
+    "pages/me/me",
+    "pages/cameraman_detail/cameraman_detail",
+    "pages/personal/personal",
+    "pages/check/check",
+    "pages/gift/gift",
+    "pages/shoppingcat/shoppingcat",
+    "pages/component/component",
+    "pages/shoot/shoot",
+    "pages/shoot_detail/shoot_detail",
+    "pages/orders/orders",
+    "pages/appoint/appoint",
+    "pages/play/play"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "婚庆",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ff0000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/index_a.png",
+        "selectedIconPath": "pages/images/index_b.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社区",
+        "iconPath": "pages/images/community_a.png",
+        "selectedIconPath": "pages/images/community_b.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "pages/images/about_a.png",
+        "selectedIconPath": "pages/images/about_b.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人中心",
+        "iconPath": "pages/images/me_a.png",
+        "selectedIconPath": "pages/images/me_b.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+  
+  
+}

@@ -1,0 +1,71 @@
+/**me.wxss**/
+.personal{
+
+}
+.p-top{
+  width: 100%;
+  height: 200rpx;
+  display: flex; 
+  justify-content: flex-end;
+  align-items: center;
+}
+.top-img{
+  width: 50%;
+
+}
+.top-img image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.top_rig{
+  margin-right:8%;
+}
+.top_rig image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.kg{
+  background-color:#f4f4f4;
+  height: 30rpx;
+  width: 100%; 
+}
+.p-infor{
+  width: 100%;
+  
+}
+.p-infor .item{
+  height: 100rpx;
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid #f4f4f4;
+  margin: 0 auto;
+  font-size: 26rpx;
+}
+.item .title{
+  width: 24%;
+  
+}
+.item .name{
+  width: 60%;
+  color: #afaaaa;
+}
+.item .isto{
+  width: 4%;
+}
+.item .isto image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.sure{
+  height: 100rpx;
+  font-size: 40rpx;
+  background-color: rgb(93, 252, 159);
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 6rpx;
+  margin: 20rpx;
+}

@@ -1,0 +1,149 @@
+<import src="../template/template.wxml" />
+<view>
+  
+  <view class="topnav" hidden='{{hiddenTopNav}}'>
+    <block wx:for="{{topNavArray}}" wx:key='topnav'>
+      <text class="{{index==navActive?'active':''}}" bindtap='goToFloor' data-floor='f{{index}}' data-index='{{index}}'>{{item}}</text>
+    </block>
+  </view> 
+ 
+  <scroll-view scroll-y='true' scroll-with-animation='true' scroll-into-view="{{floorNum}}" style='height:{{height}}rpx;' bindscroll="scrollFloor">
+    <!--id="f0"表示宝贝节点-->
+    <view id="f0" class="childnode" >
+      <!--商品轮播图以及商品信息的wxml代码 -->  
+      <view class="swiper_class">
+        <swiper style="width:100%;height:100%;" indicator-dots="true" autoplay="true" circular="true" vertical="{{vertical}}"  indicator-color="whilte"
+            interval="2000" duration="500" previous-margin="0rpx" next-margin="0rpx">
+            <block wx:for="{{goods.imgUrls}}"  wx:key="{{index}}">
+              <swiper-item>
+                <image style="width:100%;" src="{{item}}" class="slide-image"></image>
+              </swiper-item>
+            </block>
+        </swiper>
+      </view>
+    
+      <view class="goods_info">
+        <view class="product-name-wrap">
+          {{goods.title}}
+        </view>
+        <view class="product-price-wrap">
+            <view>
+              <p class="product-price-new">￥{{goods.price}}</p>  
+              <p class="product-price-old">原价￥{{goods.privilegePrice}}</p> 
+            </view>
+        </view>
+      </view>
+
+      <view class="goods_info in">
+        <view class="produce_infos">
+          <view class="produce_infos_a">发货</view>
+          <view class="produce_infos_icon"><image src="/images/location.png"/></view>
+          <view class="produce_infos_b">{{goods.location}}</view>
+          <view class="produce_infos_b">快递：0:00</view>
+          <view class="produce_infos_d">月销：{{goods.sales}}+</view>
+        </view>
+        <view class="produce_infos">
+          <view class="produce_infos_a">保障</view>  
+          <view class="produce_infos_b b">假一赔十·15天价保·上门取退·极速退款</view>
+          <view class="produce_infos_icon"><image src="/images/i-right-con.png"/></view>
+        </view>
+      </view>
+    </view>
+  
+    <!--评论 -->
+    <view class='commont childnode' id="f1">
+      <!--评论的wxml代码-->
+    <view class="goods_info in">
+        <view class="produce_infos">
+          <view style="width:72%">宝贝评价({{goods.discuessNumber}})</view>
+          <view class="produce_lookmore">
+            <view class="produce_lookmore_name">查看更多</view>
+            <view class="produce_infos_icon more"><image src="/images/icon_right_red.png"/></view>
+          </view>
+        </view>
+
+        <block wx:for="{{discuessData}}">
+          <view class="user_discuess">
+          <view class="user_discuess_icon"><image src="{{item.userImg}}"></image></view>
+          <view class="user_discuss_info">
+            <view class="user_discuss_info_name">{{item.userName}}</view>
+            <view class="user_discuss_info_time">{{item.userTime}}</view>
+            <view class="user_discuss_info_infos">{{item.userInfo}}</view>
+          </view>
+          </view>
+        </block>
+        
+
+
+        <view class="user_discuess">
+          <view class="user_discuess_icon"><image src="/images/c2.png"></image></view>
+          <view class="user_discuss_info">
+            <view class="user_discuss_info_name">hskdjfsk</view>
+            <view class="user_discuss_info_time">2010-12-12</view>
+            <view class="user_discuss_info_infos">akjsl垃圾垃圾可怜为了看感觉我了看过了为 为了开发工具我了为了看风景</view>
+          </view>
+        </view>
+      </view>
+    
+    </view>
+  
+    <!--商品详情 id="f2"代表详情节点-->
+    <view id="f2" class="childnode" >
+      <!--商品详情的wxml代码-->
+      <view class="details"> 
+      <scroll-view scroll-y="true">
+        <view class="details_name">
+          <view class="details_name_a"></view>
+          <view class="details_names">商品详情</view>
+          <view class="details_name_a"></view>
+        </view>
+        
+        <block wx:for-items="{{goods.detailImg}}" wx:key="name">
+          <image class="image_detail" src="{{item}}" mode="widthFix" style="margin-bottom:20rpx;"/> 
+        </block>
+           
+        <view class="temp"></view>
+      </scroll-view>
+    </view>   
+ 
+    </view>
+  </scroll-view>
+
+</view>
+
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image bindtap="toCar" src="/images/c-1.png" />  
+  <view class="line_nav"></view>
+   <image bindtap="addLike" src="{{isLike?'/images/enshrine_select.png':'/images/enshrine.png'}}" /> 
+  <button data-goodid="1"  class="button-green" bindtap="toggleDialog" >加入购物车</button> 
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>
+
+<!--加入购物车-->
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+      <view class="dialog__mask" bindtap="toggleDialog" />
+      <view class="dialog__container">
+        <view class="row">
+          <icon bindtap="closeDialog" class="image-close" type="cancel" size="25"/>
+          <image class="image-sku" src="{{goods.img}}"></image>
+          <view class="column">
+            <text class="sku-price">￥{{goods.price}}</text>
+            <text class="sku-title">销量 {{goods.buyRate}} 件</text>
+            <text class="sku-title">商品编码：{{goods.goodsId}}</text>
+          </view>
+        </view>
+        <text class="border-line"></text>
+        <view class="row">
+          <text >购买数量</text>
+          <view class="quantity-position">
+              <!-- <template is="quantity"  data="{{ ...item,index:index}}" />  -->
+               <template is="quantity" data="{{ ...goods,index:1}}" /> 
+          </view>
+        </view>
+        <text class="border-line"></text>
+
+        <view data-goodid="{{goods.goodsId}}" class="button-addCar" bindtap="addCar" formType="submit">确定</view>
+      </view>
+</view>

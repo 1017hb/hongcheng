@@ -1,0 +1,110 @@
+<!--canmerament_detail.wxml-->
+<view class="detial">
+  <view class="detial-intro">
+    <view class="detial-intro-title">{{title}}</view>
+    <view>年龄:{{age}}</view>
+    <view>任职婚礼策划:{{work_age}}</view>
+    <view>时间:{{ctime}}</view>
+    <view>{{info}}</view>
+    <view>知名套系</view>
+    <view class="img-t">
+      <block wx:for="{{upos}}">
+          <image src="{{item}}"></image>
+      </block>
+    </view>
+
+    <view style="clear:both"></view>
+    <view class="award">
+      <view class="award-top">赏</view>
+      <view class="award-bottom">1人打赏</view>
+    </view>
+
+    <view class="read">阅读 {{readnumber}}</view>
+
+    <view class="operate">
+      <view class="operate-a">更多操作</view>
+    </view>
+
+    <view class="pro-detail">
+      <view class="pro-detials">
+        <view class="pro-detials-img"><image src="../images/pro_detail.png"></image></view>
+        <view class="pro-detials-title">商品详情</view>
+      </view>
+       <view class="pro-detials">
+        <view class="pro-detials-img"><image src="../images/pro_detail.png"></image></view>
+        <view class="pro-detials-title">商品详情</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="kg"></view>  
+
+  <view class="comment">
+    <view class="comment-top">
+      <view>全部评论{{discuss.length}}</view>
+    </view>
+    <view class="comment-model">
+        <block wx:for="{{discuss}}">
+          <view class="comment-model-user-item">
+          <view class="comment-model-user-item-img"><image src="{{item.avatarUrl}}"></image></view>
+          <view class="comment-model-user-item-infor">
+            <view class="item-title">
+              <view class="item-title-name">{{item.nickName}}</view>
+                <view class="item-like-num">{{item.likes}}</view>
+                <view class="item-img" catchtap='onCollectionTap' data-coll="{{item.id}}">
+                  <image wx:if="{{item.zan}}" src="../images/like_b.png"></image>
+                  <image wx:else src="../images/like_a.png"></image>
+                </view>
+                </view>
+                  <view class="item-ctime">{{item.i}}楼  {{item.ctime}}</view>
+                  <view class="item-info">{{item.info}}</view>
+                </view>
+          </view>
+        </block>
+
+      <view style="clear:both;"></view>
+       <view class="comment-model-user-no-more">{{isdiscuss}}</view>
+    </view>
+     
+      <view class="comment-bottom" hidden="{{iskey}}">
+        <view class="comment-bottom-input">
+          <view class="inp last"><image src="../images/left.png"></image></view>
+          <view class="inp inpt" bindtap="input_b">评论</view>
+          <view class="inp send"></view>
+          <view class="inp collect"><image src="../images/collect_a.png"></image></view>
+          <view class="inp share"><image src="../images/share.png"></image></view>
+        </view>
+        <view style="clear:both;"></view>
+      </view>
+
+      <view wx:if="{{iskey}}">
+          <view class="v-key" >
+              <view class="v-bt">
+                <view class="cacel" bindtap="t_cacel">取消</view>
+                <view class="sure" bindtap="t_send">发表</view>
+              </view>
+              <view style="clear:both"></view>
+              <view class="v-text">
+                <textarea
+                placeholder="快来评论吧"
+                maxlength="-1"
+                auto-height="true"
+                auto-focus="{{iskey}}"
+                focus="{{iskey}}"
+                bindblur="t_blur"
+                bindfocus = "t_focus"
+                bindinput="t_input"
+                adjust-position="{{true}}"
+                show-confirm-bar="{{false}}"
+                cursor-spacing="8"
+                >
+                </textarea>
+              </view>
+            </view>
+      </view>
+      
+  </view>
+</view>
+
+
+

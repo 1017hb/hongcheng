@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scroll-x": "/component/scroll-x/index"
+  }
+  
+}

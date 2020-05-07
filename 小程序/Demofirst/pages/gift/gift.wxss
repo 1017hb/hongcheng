@@ -1,0 +1,31 @@
+/**me.wxss**/
+.gift{
+  
+}
+.gift-item{
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.item-img image{
+  height: 500rpx;
+  width: 100%;
+}
+.item-bottom{
+  width: 96%;
+  margin: 0 auto;
+}
+.item-money{
+  font-size: 30rpx;
+  color: rgb(248, 161, 29);
+}
+.item-number{
+  font-size: 26rpx;
+  width: 96%;
+}
+.item-bt{
+  display: flex;
+}
+.item-shopingcat image{
+  width: 40rpx;
+  height: 32rpx;
+}

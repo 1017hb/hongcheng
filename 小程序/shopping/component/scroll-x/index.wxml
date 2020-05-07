@@ -1,0 +1,11 @@
+
+<view class="ico-scroll-x">
+  <scroll-view>
+    <block wx:for="{{scrollData}}" wx:key="{{index}}">
+      <navigator url="" class="ico-scroll-item">
+        <view>{{item.title}}</view>
+      </navigator>
+    </block>
+    <view>你好</view>
+  </scroll-view>
+</view>

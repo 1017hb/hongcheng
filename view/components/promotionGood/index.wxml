@@ -1,0 +1,22 @@
+  <view class="ico-goods">
+    <block wx:for="{{benefit}}"  wx:key="{{index}}">
+      <view class="ico-item">
+        <navigator url='/pages/goods_details/index?id={{item.id}}'>
+            <view class="ico-item-img" style="height:{{height}}rpx;"><image src="{{item.image}}"/></view>
+            <view class="ico-item-bottom">
+              <view class="ico-item-bottom-name">{{item.store_name}}</view>
+              <view class="ico-item-bottom-info">
+                <view class="ico-item-bottom-price">
+                  <view class="ico-item-bottom-vip" style="font-size:{{fonts}}rpx;">{{vip_name}}价</view>
+                  <view class="ico-item-bottom-price-new">
+                  ￥<text wx:if="{{vip_grade === 3}}">{{item.partner}}</text>
+                  <text wx:else>{{item.price}}</text>
+                  </view>
+                </view>  
+              </view>
+              <view class="ico-price-old">吊牌价: ￥{{item.ot_price}}</view>
+            </view>
+          </navigator>
+        </view>
+    </block>
+  </view>

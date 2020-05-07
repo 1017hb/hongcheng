@@ -1,0 +1,111 @@
+<!--shoot.wxml-->
+
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+<!--分享至好友-->
+<view class="share">
+  <button open-type="share"></button>
+</view>
+<view class="share">
+  <image src="../images/s_share.png"></image>
+</view>
+<!--电话-->
+<view class="share phone" catchtap="to_call">
+  <image src="../images/s_phone.png"></image>
+</view>
+
+<scroll-view scroll-y="true" style="margin-bottom:100rpx;">
+  <view class="shoot_detail">
+  <view class="detail_top">
+    <swiper autoplay="true"  circular="true" interval="5000" duration="3000" style="height:300rpx;">
+       <block wx:for="{{swipt_background}}">
+          <swiper-item>
+            <image style="height:350rpx;width:100%;" src="{{item}}"></image>
+          </swiper-item>
+        </block>
+    </swiper>
+    <view class="content">
+      <view class="con title">{{title}}</view>
+      <view class="con price">${{price}}</view>
+      <view class="time">
+        <view class="ctime">服务时长:</view>
+          <block wx:for="{{time_array}}">
+            <view class="ctime to">{{item}}小时</view>
+          </block>
+      </view>
+      <view class="time">
+        <view class="ctime">营业时段:</view>
+        <view class="ctime to">{{work_time}}</view>
+      </view>
+      <view class="time">
+        <view class="ctime">预约日期:</view>
+        <view class="ctime to">{{appoint_year}}</view>
+      </view>
+    </view>
+    
+    <view class="miss">
+      <view class="info">预约说明</view>
+      <view class="info cont">预约请提前30分钟到店</view>
+    </view>
+     
+  </view>
+  <view class="info_detail">  
+
+    <view class="moddel">
+        <view class="model_c">
+        <view class="fg"></view>
+          <view class="moddel_img">
+              <image src="../images/s_detail.png"></image>
+          </view>
+          <view class="moddel_title">详情</view>
+          <view class="fg"></view>
+        </view>
+    </view>
+
+  <view class="s_bottom">
+    <view class="detail_title">产品详情</view>
+    <view class="detail_img">
+    <view class="img_one">
+       <view class="one"><image src="../images/s_1.jpg"></image></view>
+      <view class="one"><image src="../images/s_3.jpg"></image></view>
+    </view>
+    <view class="img_two">
+      <view class="two"><image src="../images/s_7.jpg"></image></view>
+    </view>
+    
+     <view class="img_four">
+      <view class="four"><image src="../images/s_10.jpg"></image></view>
+    </view>
+    <view class="img_five">
+      <view class="five left"><image src="../images/s_6.jpg"></image></view>
+      <view class="five right">
+          <view class="right a"><image src="../images/s_11.jpg"></image></view>
+           <view class="right a"><image src="../images/s_9.jpg"></image></view>
+      </view>
+    </view>
+     <view class="img_three">
+      <view class="three" catchtap="previewImage" data-src="http://www.agacsr.com/css/index_one.jpg"><image src="../images/s_4.jpg"></image></view>
+    </view>
+    </view>
+  </view>
+    
+  </view>
+  
+</view>
+</scroll-view>
+<view class="shoot_bottom">
+  <view class="s_detail_bottom">
+  <view class="s_d_left" catchtap="to_orders">
+    <view  class="left_img"><image src="../images/s_detail.png"></image></view>
+    <view  class="left_title">订单</view>
+  </view>
+   <view class="s_d_left" catchtap="to_index">
+      <view class="left_img"><image src="../images/store.png"></image></view>
+      <view class="left_title">店铺</view>
+   </view >
+    <view class="s_d_right" catchtap="to_appoint">去预定</view>
+</view>
+</view>
+
+
+

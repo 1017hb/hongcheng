@@ -1,0 +1,62 @@
+<view>
+  <view class="swiper_class">
+    <swiper style="width:100%;height:100%;"  autoplay="true" circular="true" vertical="{{vertical}}"  
+          interval="2000" duration="500" previous-margin="0rpx" next-margin="0rpx">
+          <block wx:for="{{swipt_background}}"  wx:key="{{index}}">
+            <swiper-item>
+              <image style="width:100%;" src="{{item}}" class="slide-image"></image>
+            </swiper-item>
+          </block>
+    </swiper>
+  </view>
+  <view class="section">
+        <!-- 左侧类型 -->
+        <scroll-view scroll-y="true" class="left">
+            <view wx:for="{{types}}" wx:key="typeId" data-type-id="{{item.id}}" bindtap="tapType" class="{{item.id == currType||scrollTop < setitem ? 'active' : ''}}" style="font-size:33rpx">
+                {{item.name}}
+            </view>
+        </scroll-view>
+        <!-- 右侧数据 -->
+        <scroll-view bindscroll="scroll" scroll-y="true" class="right" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" >
+            <block wx:for="{{nav_data}}"  wx:key="{{index}}" >
+              <view id='{{item.id}}' class="l-items">
+                <block wx:for="{{item.data}}" wx:for-item="data" wx:key="id">
+                  <view class="i-item-class" data-id="{{data.id}}">
+                    <view class="i-item-img"><image src="{{data.img}}"/></view>
+                    <view class="i-item-name">{{data.name}}</view>
+                  </view>
+                </block>
+              </view>
+            </block>  
+        </scroll-view>
+    </view>
+   
+
+
+</view>
+
+
+<!--
+  <view>
+    <view class="loc"><view class="loc-a"><image src="/images/location.png"/></view><view class="loc-b">广州市天河区车陂</view></view>
+  </view>
+-->
+  <!--
+                    <view class="l-item-top">
+                      <view class="l-item-top-a">奶茶</view>
+                      <view class="l-item-top-b"></view>
+                    </view>
+                    <view >
+                    <view class="n-item">
+                      <view class="n-item-img"><image src="/images/c2.jpg"/></view>
+                      <view class="n-item-info">
+                        <view class="n-item-info-a">拿铁</view>
+                        <view class="n-item-info-b">natie</view>
+                        <view class="n-item-info-c">
+                          <view class="n-item-info-d">￥15.63</view>
+                          <view class="n-item-info-e"><image src="/images/add.png"/></view>
+                        </view>
+                      </view>
+                    </view>
+                    </view>
+                    -->

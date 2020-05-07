@@ -1,0 +1,132 @@
+一个项目创建流程
+
+
+
+查看版本
+node -v
+
+全局安装
+npm install webpack@3.6.0 -g
+
+
+局部安装
+-dev开发时依赖
+npm install webpack@3.6.0 --save-dev
+
+执行本地安装
+配置脚本"build":"webpack"
+命令符：npm run build
+
+Module build failed: Error: Cannot find module通用解决办法
+在使用webpack总会不知不觉得遇到这种问题：
+遇到Module build failed: Error: Cannot find module ‘模块名’
+那就安装
+cnpm install 模块名 –save-dev(关于环境的，表现为npm run dev 启动不了)
+cnpm install 模块名 –save(关于项目的，比如main.js，表现为npm run dev 成功之后控制台报错)
+
+图片
+npm install--save-dev babel-loader7 babel-core babel-preset-es2015
+1024*68
+
+下载vue-cli3  cnpm intall -g @vue/cli
+
+使用vue-cli2 命令符：vue init webpack 项目名
+使用vue-cli3 命令符：vue create 项目名
+
+启动配置服务器  vue ui
+查看状态 git status
+
+
+--save   部署和开发时都用到
+--save -dev  开发时用到
+下载vuex npm install vuex --save
+e
+
+git  
+创建仓库后
+在相同目录下  git clone https://github.com/1017hb/supermall.git
+git status  查看文件状态
+git add .      添加修改的文件
+git commot -m '初始化项目'    提交到本地仓库
+git push  提交到服务器
+
+下载
+ git clone 地址   
+npm install //初始化项目,添加所有依赖
+git remote add origin 地址   本地与git远程进行连接
+git push -u origin master  将本地资源push到远程仓库
+
+添加路由
+npm install vue-router --save
+
+src目录下创建 router文件夹  创建文件index.js 
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+//懒加载
+const Home = () => from import('../views/home/Home')
+Vue.use(VueRouter)
+
+const routes = [
+	//默认路径
+	{
+		path:'',
+		redirect:'/home'
+	},
+	{
+		path:'/home'，
+		component:Home
+	}
+	]
+
+const router = new VueRouter({
+	routes
+})
+
+export defalut router
+
+在main.js中挂载
+import router from './router'
+
+
+打包到dist中
+npm run build
+
+export defalut xxx
+impor sss from '...'   //sss随便命名
+
+export function aa(){
+	
+}
+import aa from '...'
+
+ref如果是绑定在组建中的，那么通过this.$refs.refname获取到的是一个组建对象
+
+height:100vh；
+vh:视口
+
+组件是不能直接监听（@click）
+需要加属性native  @click.native
+
+
+vue 中 监听图片加载完用 @load   
+
+<keep-alive>  防止组件销毁
+属性  exclude=“Detail” 除了
+
+
+//fastclick解决移动端300毫秒延迟
+npm install fastclick --save
+
+import FastClick from 'fastclick'
+
+FastClick.attach(document.body)
+
+//图片懒加载   屏幕显示图片再加载图片
+vue-lazyload
+npm install vue-lazyload --save
+
+import VueFastLoad from 'vue-fastload'
+
+Vue.use(VueFastLoad)
+
+将img:src -> v-lazy

@@ -1,0 +1,190 @@
+<navbar parameter='{{parameter}}' logoUrl="{{logoUrl}}"></navbar>
+<view class='index'>
+    <!--导航栏目-->
+    <view class="indexTip" style="top:{{navH+13}}rpx" hidden="{{iShidden}}">
+       <view class="tip acea-row row-between-wrapper">
+          <view class="text">点击“<image src="/images/spot.png"></image>”添加到我的小程序， 微信首页下拉即可访问商城。</view>
+       <view class="iconfont icon-guanbi1" bindtap="closeTip"></view>
+       </view> 
+    </view>
+    <!--顶部品牌分类-->
+    <view class="scroll-x-top">
+      <scroll-view class="scroll-view_H" style="top:{{navH}}rpx;" scroll-x="{{true}}">
+        <view class="list">
+          <view wx:for="{{productList}}"  class="scroll-item {{index === currentIndex ? 'active':''}}" wx:key="{{index}}" bindtap='setScrollItem' data-scrollindex="{{index}}">
+            <view class="scroll-x-title">{{item.brand_name}}</view>
+            <view class="scroll-item-line"></view>
+          </view>      
+        </view>
+      </scroll-view>
+    </view>
+    <!--轮播图-->
+    <view class='index-bg' wx:if="{{imgUrls.length && isShowCate}}">
+        <swiper indicator-dots="true"
+            autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" indicator-color="rgba(255,255,255,0.6)" indicator-active-color="#fff">
+            <block wx:for="{{imgUrls}}" wx:key="index">
+              <swiper-item>
+                <navigator url='{{item.url}}' class='slide-navigator acea-row row-between-wrapper' hover-class='none'>
+                  <image src="{{item.pic}}" class="slide-image" />
+                </navigator>                
+              </swiper-item>
+            </block>
+        </swiper>
+    </view> 
+    <!--商品分类-->
+    <view class='wrapper' wx:if="{{fastList.length && isShowCate}}">
+      <view class="goods-class">
+          <block wx:for="{{fastList}}" wx:key="index">
+            <navigator hidden="{{item.id==42}}" hover-class="none" class="item" url='/pages/fashion/index?sid={{item.id}}&title={{item.cate_name}}'>
+                    <view class='img-box'>
+                      <image src='{{item.pic}}'></image>
+                    </view>
+                    <view class='pro-info line1'>{{item.cate_name}}</view>
+            </navigator>
+          </block>
+      </view> 
+    </view>
+    <!--新闻简报-->
+    <view class='news acea-row row-between-wrapper' wx:if="{{itemNew.length}}">
+       <view class='pictrue'><image src='/images/news.png'></image></view>
+       <view class='swiperTxt'>
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="2500" duration="{{duration}}" vertical="true" circular="true">
+                <block wx:for="{{itemNew}}" wx:key="index">
+                    <swiper-item catchtouchmove='catchTouchMove'>
+                        <navigator wx:if="{{item.show == '1'}}" url='{{item.url}}'  open-type='switchTab' class='acea-row row-between-wrapper' hover-class='none'>
+                            <view class='text acea-row row-between-wrapper'>
+                                <view class='label border2' wx:if="{{item.id%2 == 0}}">最新</view>
+                                <view class='newsTitle line1'>{{item.info}}</view>
+                            </view>
+                            <view class='iconfont icon-xiangyou'></view>
+                        </navigator>
+                        <navigator wx:else open-type='navigate' url='{{item.url}}'  class='acea-row row-between-wrapper' hover-class='none'>
+                            <view class='text acea-row row-between-wrapper'>
+                                <view class='label border2' wx:if="{{item.id%2 == 0}}">最新</view>
+                                <view class='newsTitle line1'>{{item.info}}</view>
+                            </view>
+                            <view class='iconfont icon-xiangyou'></view>
+                        </navigator>
+                    </swiper-item>
+                  </block>
+              </swiper> 
+       </view>
+    </view>
+    <!--活动专区-->
+    <view class='specialArea acea-row row-between-wrapper' wx:if="{{activityList.length}}">
+      <block wx:for="{{activityList}}" wx:key="index">
+       <navigator class='assemble' url='{{item.link}}' wx:if="{{index < 1}}">
+          <image src='{{item.pic}}'></image>
+          <view class='text'>
+             <view class='name'>{{item.title}}</view>
+             <view class='infor'>{{item.info}}</view>
+          </view>
+       </navigator>
+      </block> 
+       <view class='list acea-row row-column-between'>
+          <block wx:for="{{activityList}}" wx:key="index">
+            <navigator class='item' url='{{item.link}}' wx:if="{{index > 0}}">
+              <image src='{{item.pic}}'></image>
+              <view class='text'>
+                  <view class='name'>{{item.title}}</view>
+                  <view class='infor'>{{item.info}}</view>
+              </view>
+            </navigator>
+          </block>  
+       </view>
+    </view>
+    <!--品牌推荐-->
+    <view class='index-bg  catep wrapper' wx:if="{{isShowCate}}" >
+        <view class="show-title acea-row row-center-wrapper" style="height:50rpx;border-top:0">
+          <image src="../../images/ling.png"></image>
+          <view class="titleTxt">品牌推荐</view>
+          <image src="/images/ling.png"></image>
+        </view>
+        <swiper indicator-dots="true"
+            autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" indicator-color="rgba(255,255,255,0.6)" indicator-active-color="orange">
+            <block wx:for="{{cateImage}}" wx:key="index">
+              <swiper-item style="border-radius:20rpx;">
+                <view  class='slide-navigator acea-row row-between-wrapper' hover-class='none' bindtap="setCate" data-cateId="{{item.id}}">
+                  <image src="{{item.logo_banner}}" class="slide-image" style="border-radius:20rpx;"/>
+                </view>                
+              </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view style="width:100%;height:8rpx; background-color: #e2e1e1;" wx:if="{{isShowCate}}"></view>
+    <!--简介,签到-->
+    <view class='wrapper' wx:if="{{isShowCate}}">
+      <view class='serve acea-row row-between-wrapper'>
+        <navigator class="serve-url" url="/pages/news_list/index">
+          <image src="http://www.gzggtp.com/uploads/attach/2020/03/20200330/78a5122a7aefb0d2167516a5a83378bc.jpg"></image>
+        </navigator>
+        <navigator class="serve-url" url="/pages/user_sgin/index">
+         <image src="http://www.gzggtp.com/uploads/attach/2020/03/20200330/2567d1a1a75039eaeeb6db33782a578b.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+    <!--热门榜单 -->
+    <view class='hotList' wx:if="{{likeInfo.length && isShowCate}}">
+        <view class='hot-bg'>
+            <view class='title acea-row row-between-wrapper'>
+              <view class='text line1'><text class='label'>热门榜单</text>根据销量、搜索、好评等综合得出</view>
+              <navigator class='more' hover-class="none" url='/pages/first-new-product/index?type=2'>更多<text class="iconfont icon-jiantou"></text></navigator>
+            </view>
+        </view>
+        <view class='list acea-row row-middle'>
+            <block wx:for="{{likeInfo}}" wx:key="index">
+              <block wx:if="{{index < 3}}">
+              <navigator class='item' url='/pages/goods_details/index?id={{item.id}}'>
+                <view class='pictrue'>
+                  <image src='{{item.image}}'></image>
+                  <image wx:if="{{index == 0}}" src='/images/one.png' class='numPic'></image>
+                  <image wx:elif="{{index == 1}}" src='/images/two.png' class='numPic'></image>
+                  <image wx:elif="{{index == 2}}" src='/images/three.png' class='numPic'></image>
+                </view>
+                <view class='name line1'>{{item.store_name}}</view>
+                <view class='money font-color'>
+                  ￥<text class='num' wx:if="{{vip_grade === 3}}">{{item.partner}}</text>
+                  <text class='num' wx:else>{{item.price}}</text>
+                </view>
+              </navigator>
+              </block>
+            </block>  
+        </view>
+    </view>
+    <!--今日上新-->
+    <view class='wrapper' wx:if="{{bastList.length && isShowCate}}">
+        <view class="show-title acea-row row-center-wrapper">
+          <image src="/images/ling.png"></image>
+          <view class="titleTxt">今日上新</view>
+          <image src="/images/ling.png"></image>
+        </view>
+        <goodList bastList="{{bastList}}" vip_name="{{vip_name}}"  vip_grade="{{vip_grade}}"></goodList>
+    </view>
+    <!--促销商品-->
+    <view class='wrapper' wx:if="{{proGoods.length && isShowCate}}">
+      <view class="show-title acea-row row-center-wrapper">
+        <image src="/images/ling.png"></image>
+        <view class="titleTxt">促销商品</view>
+        <image src="/images/ling.png"></image>
+      </view>
+      <promotionGood benefit="{{proGoods}}" height="360" vip_name="{{vip_name}}"  vip_grade="{{vip_grade}}"></promotionGood>
+    </view>
+
+    <!--顶部品牌分类商品-->
+    <view class='quality-recommend' style="margin-top:70rpx;background-color:#e2e1e1;" wx:if="{{hotList.length && !isShowCate}}" >
+      <swipers imgUrls="{{hotImgUrls}}" wx:if="{{hotImgUrls.length}}"></swipers>
+      <view class='title acea-row row-center-wrapper'>
+          <view class='line'></view>
+          <view class='name'><text class='iconfont {{icon}}'></text>{{name}}</view>
+          <view class='line'></view>
+      </view>
+      
+      <promotionGood benefit="{{hotList}}" height="360" vip_name="{{vip_name}}"  vip_grade="{{vip_grade}}"></promotionGood>
+    </view>
+
+    <view class="loadingicon acea-row row-center-wrapper " style="background-color:{{bcolor}}" wx:if="{{proGoods.length > 0}}">
+      <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadTitle}}
+    </view>
+</view>
+<coupon-window window='{{window}}' couponList="{{couponList}}" bind:onColse="onColse"></coupon-window>
+<home></home>

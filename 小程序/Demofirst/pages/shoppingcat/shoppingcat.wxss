@@ -1,0 +1,184 @@
+.cat_img{
+  width: 80%;
+  margin: 0 auto;
+ margin-top: 40%;
+ text-align: center;
+}
+.cat_title{
+  font-size: 50rpx;
+  color: rgb(156, 149, 149);
+  text-align: center;
+}
+.cat_img image{
+  width: 380rpx;
+  height:300rpx;
+}
+
+.goods-item{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgb(175, 172, 172);
+}
+.item_r{
+  width: 14%;
+  text-align: center;
+}
+.cart-icon {
+    display: inline-block;
+    margin: auto 10rpx;
+}
+
+.item_img {
+    width: 28%;
+    height: 200rpx;
+}
+.item_img image{
+  width: 144rpx;
+  height: 128rpx;
+  margin-top: 30rpx;
+}
+.item_title{
+  margin-top: -42rpx;
+  width: 38%;
+}
+.name{
+  font-size: 32rpx;
+}
+.money{
+  color: rgb(253, 203, 63);
+  font-size: 26rpx;
+}
+.item_left{
+  width: 16%;
+  text-align: center;
+  margin-bottom: 8rpx;
+}
+.item_c{
+  margin-bottom: 28rpx;
+  text-align: right;
+}
+.item_c image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.number{
+  display: flex;
+  color: rgb(211, 206, 206);
+  align-items: center;
+  justify-content: center;
+}
+.number_c{
+  border: 1rpx solid rgb(202, 200, 200);
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  color: rgb(63, 60, 60);
+  font-size: 28rpx;
+}
+.number_n{
+  font-size: 36rpx;
+  width: 56rpx;
+  color: #000;
+  text-align: center;
+}
+.all_goods{
+  background-color: #fff;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0rpx;
+  border-top:1rpx solid rgb(68, 64, 64); 
+}
+.all_icon{
+  margin-left: 4%;
+}
+.all_select{
+  font-size: 26rpx;
+  color: rgb(54, 51, 51);
+  width: 14%;
+}
+.all_price{
+  width: 27%;
+  font-size: 24rpx;
+  color: rgb(240, 21, 75);
+  text-align: left;
+}
+.clearance{
+  width: 30%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-color: rgb(240, 21, 75);
+  color: #fff;
+  font-size: 30rpx;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:#999;
+  z-index:9999;
+  top:0;
+  left:0;
+  opacity: 0.50;  
+  /**兼容性处理,需要时添加
+  -moz-opacity: 0.7;  
+  opacity: 0.70;  
+  filter: alpha(opacity=70);
+  **/
+}
+
+/*密码框*/
+.btn_pay{
+  margin: 100rpx auto; width: 600rpx; height: 100rpx; line-height: 100rpx; border-radius: 100rpx;
+  background-color: #d3a95a; color: #fff; font-size: 36rpx; text-align: center;
+}
+/* 支付密码css start */
+.bg_layer{
+  position: fixed; left: 0; top: 0; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.6); z-index: 9998;
+}
+.input_main{
+    position: fixed; left: 0;  width: 100%; height: 394rpx;
+    background-color: #fff; z-index: 9999;
+}
+.input_title{
+    width: 100%; height: 90rpx; line-height: 90rpx; text-align: center;
+    font-size: 32rpx; border-bottom: 1rpx solid #e2e2e2;
+}
+.input_back{
+    position: absolute; left: 0; top: 0;
+    width: 80rpx; height: 90rpx; display: flex; justify-content: center; align-items: center;
+}
+.input_back text{
+  width: 20rpx;
+  height: 20rpx;
+  background-color: white;
+  border: 1rpx solid #aaa;
+  border-width: 5rpx 0 0 5rpx;
+  transform: rotate(-45deg);
+}
+.input_tip{  margin: 30rpx; font-size: 24rpx; color: #888; }
+/* 密码掩码模拟 */
+.input_row{
+  width: 690rpx; margin: 0 auto; height: 98rpx; position: relative;
+  display: flex; align-items: center; border: 1rpx solid #e2e2e2; border-radius: 20rpx;
+}
+.input_row .pwd_item{
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  height: 100%; border-right: 1rpx solid #e2e2e2; position: relative;
+}
+.pwd_item:nth-last-of-type(1) { border-right: 0; }
+.pwd_item text {
+  width: 30rpx; height: 30rpx; border-radius: 30rpx; background-color: #555;
+}
+.forget_pwd{
+  float: right; margin: 30rpx; width: 100rpx; text-align: right; font-size: 24rpx; color: #ff7800;
+}
+/* 文本输入框位置: 设置到左边隐藏 */
+.input_control {
+  position: relative; left: -300rpx; bottom: 0; width: 100rpx; height: 100rpx;
+}

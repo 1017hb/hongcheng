@@ -1,0 +1,72 @@
+/**index.wxss**/
+@import '/app.wxss'; 
+.g-three{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.th-item{
+  width: 28%;
+  height: 100rpx;
+  margin: 30rpx 20rpx;
+}
+.th-item image{
+  border-radius: 10rpx;
+}
+.c-items-top{
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+}
+.c-items-top-a{
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+  margin: 12rpx 20rpx;
+}
+.c-items-top-b{
+  font-size: 26rpx;
+  color: #dcdcdc;
+}
+.t-item{
+  width: 46%;
+  margin: 12rpx 2%;
+
+}
+.c-goods{
+  display: flex;
+  flex-wrap: wrap
+}
+.name{
+  font-size: 32rpx;
+  height: 48rpx;
+  line-height: 58rpx;
+}
+
+.money{
+  margin-right: 46%;
+  font-size: 34rpx;
+}
+.number{
+  font-size: 20rpx;
+  color: #969292;
+}
+.c-goods-bottom{
+  padding-left: 6rpx;
+}
+
+
+
+
+.ico-item-bottom-add-car.nav{
+  margin-left: 36%;
+}
+
+.ico-item.tui{
+  width: 29%;
+}
+.ico-item-img.tui-img{
+  height: 300rpx;
+}

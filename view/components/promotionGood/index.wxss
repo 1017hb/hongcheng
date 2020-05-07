@@ -1,0 +1,80 @@
+@import '/app.wxss';
+.ico-goods{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.ico-item{
+  width: 47%;
+  background-color: #fff;
+  margin: 8rpx 0;
+  border-radius: 10rpx;
+  border: 1rpx solid #f4f4f4;
+}
+.ico-item:nth-of-type(2n+1){
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.ico-item:nth-of-type(2n){
+  margin-right: 2%;
+}
+.ico-item-img{
+  width: 100%;
+}
+.ico-item-img image{
+  border-radius: 10rpx 10rpx 0 0;
+}
+.ico-item-bottom{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  padding: 0 0 20rpx 10rpx;
+}
+.ico-item-bottom-name{
+  line-height: 30px;
+  margin: 0 5rpx;
+   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ico-item-bottom-price{
+  display: flex;
+  width: 88%;
+}
+.ico-item-bottom-vip{
+  font-size: 30rpx;
+  background-color: red;
+  color: #fff;
+  border-radius: 8rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  
+}
+.ico-item-bottom-price-new text{
+  font-weight: 600;
+  font-size: 30rpx
+}
+.ico-item-bottom-price-new{
+  color: red;
+  margin-left: 10rpx;
+}
+.ico-item-bottom-info{
+  display: flex;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  align-items: center;
+}
+.ico-item-bottom-add-car{
+  width: 34rpx;
+  height: 34rpx
+}
+.ico-item-bottom-number{
+  line-height: 24rpx;
+  margin-bottom: 18rpx;
+  color: #888;
+}
+.ico-price-old{
+  color: #888;
+  text-decoration: line-through;
+}
+

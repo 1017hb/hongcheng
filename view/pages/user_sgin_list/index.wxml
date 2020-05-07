@@ -1,0 +1,39 @@
+<navbar parameter='{{parameter}}'></navbar>
+
+  <view class="wrapper acea-row row-between-wrapper" style="width:96%;margin:0 auto;margin-top:24rpx;">
+      <view class="sign re" catchtap="setLook" data-index="1">签到记录</view>
+      <view class="sign in" catchtap="setLook" data-index="0">积分介绍</view>
+  </view>
+
+<view class='sign-record' wx:if="{{isShow}}" style="width:95%;margin:0 auto;">  
+    <view class='list' wx:for="{{signList}}" wx:key>
+        <view class='item'>
+          <view class='data'>{{item.month}}</view>
+          <view class='listn' style="border-radius:10rpx;">
+              <view class='itemn acea-row row-between-wrapper' wx:for="{{item.list}}" wx:key>
+                <view>
+                    <view class='name line1'>{{item.title}}</view>
+                    <view>{{item.add_time}}</view>
+                </view>
+                <view class='num font-color'>+{{item.number}}</view>
+              </view>
+          </view>
+        </view>
+    </view>
+      <view class='loadingicon acea-row row-center-wrapper'>
+          <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadtitle}}
+      </view>
+</view>
+<view class="sign-intro" hidden="{{isShow}}">
+  <view class="sign-line">积分具体规则说明</view>
+  <view class="sign-context">
+    1.签到领积分，用户每天前往领积分页面进行签到，每天可领果果童品积分，连续签到第七天可领高额积分，若连续签到中断，则重新计算;
+  </view>
+  <view class="sign-context">
+    2.果果童品积分可兑换相应的金额，但不能提现，可用于抵扣货款，10积分=0.5元(人民币);
+  </view>
+  <view class="sign-context">
+    3.当交易发生退款时（含部分退款）,退款成功后，相应积分不会退回;
+  </view>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

@@ -1,0 +1,75 @@
+.item{
+  display: flex;
+  color: rgb(100, 98, 98);
+  height: 100rpx;
+  line-height: 100rpx;
+  align-items: center;
+  border-bottom: 1rpx solid rgb(172, 167, 167);
+}
+.item_title{
+  width: 30%;
+  margin-left: 2%;
+}
+.item_ctime{
+   width: 60%;
+   text-align: right
+}
+.sure{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 98%;
+  margin: 1%;
+  border-radius: 4rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: rgb(243, 152, 14);
+  color: #fff;
+}
+.modal {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.gopay_tip{
+  width:600rpx;
+  height: 300rpx;
+  background-color: white;
+  margin: 300rpx auto; 
+  font-size: 36rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.tip_title{
+  padding: 10rpx auto;
+}
+.tip_content{
+  font-size: 30rpx;
+  color: rgb(163, 163, 163);
+  /* padding:0 20rpx; */
+}
+.tip_confirm{
+  text-align: center;
+  width:160rpx;
+  height:80rpx;
+  font-size:30rpx;
+  margin-top:14rpx;
+  color:#FFF;
+  background-color:rgb(68,181,73);
+
+}

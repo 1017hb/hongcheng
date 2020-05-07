@@ -1,0 +1,26 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='index' style="background-color:#f5f5f5;">
+  <!--顶部品牌分类商品-->
+    <view>
+      <view class='wrapper'>
+        <view class="goods-class" wx:if="{{cateFataList.length}}">
+          <block wx:for="{{cateFataList}}" wx:key="index">
+            <view class="item" catchtap="setFashionItem" data-fashion="{{item.id}}">
+                <view class='img-box'>
+                  <image src='{{item.pic}}'></image>
+                </view>
+                <view class='pro-info line1'>{{item.cate_name}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='wrapper' style="background-color:#f4f4f4;" wx:if="{{cateBenefitList.length}}">
+        <promotionGood benefit="{{cateBenefitList}}" height="360" vip_grade="{{vip_grade}}" vip_name="{{vip_name}}"></promotionGood>
+      </view>
+    </view>
+
+     <view class='loadingicon acea-row row-center-wrapper'  wx:if="{{cateBenefitList.length}}">
+        <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadTitle}}
+     </view>
+</view>
+<home></home>

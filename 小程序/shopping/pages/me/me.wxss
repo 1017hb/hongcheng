@@ -1,0 +1,105 @@
+/**me.wxss**/
+.me-info{
+  width: 100%;
+  height: 200rpx;
+  background-color: #fff;
+}
+.me-personal{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 160rpx;
+  padding-top: 10rpx;
+  background-color: #FE5723;
+}
+.p-title{
+  width: 62%;
+  padding-top: 16rpx;
+}
+.p-img{
+  margin-left: 6%;
+  margin-right: 2%;
+}
+.p-img image{
+ width: 80rpx;
+ height: 80rpx;
+ border-radius:50%; 
+}
+.p-to{
+   margin-left: 6%;
+   margin-top: 18rpx;
+}
+.p-to image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.me-order{
+  width: 92%;
+  height: 176rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: -24rpx;
+  border-radius: 8rpx;
+}
+.orders{
+  margin-top: 30rpx;
+  width: 120rpx;
+  height: 140rpx;
+  text-align: center;
+}
+.orders image{
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: -6rpx;
+}
+.orders .o-order{
+  font-size: 30rpx;
+}
+.me-more{
+  width: 92%;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.me-more-item{
+  width: 100%; 
+  height: 100rpx;
+  line-height:100rpx;
+  display: flex;
+  
+  border: 1rpx solid #f4f4f4;
+    font-size: 30rpx;
+    align-items: center;
+}
+.me-more-item .img{
+  margin-left: 2%;
+  width: 66rpx;
+  text-align: center;
+
+}
+.img image{
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.i-image{
+  width: 96%;
+  height: 160rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.i-image image{
+  border-radius: 10rpx;
+}
+.more-title{
+  width: 78%;
+}
+.more-infor{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -34rpx;
+}

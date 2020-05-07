@@ -1,0 +1,64 @@
+<!--personal.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+<view hidden="{{is_goshopping}}">
+  <view class="shoppingcat" bindtap="shopping_page">
+    <view class="cat_img">
+      <image src="../images/shopcatpage.png"></image>
+    </view>
+    <view class="cat_title">去看看</view>
+  </view>
+</view>
+<scroll-view scroll-y="true" style="margin-bottom:100rpx;">
+    <block wx:for='{{carts}}'>
+      <view class="goods-item">
+          <view class="item_r" bindtap="selectListThing" data-id="{{item.id}}" >
+              <icon wx:if="{{item.isselcted}}" class='cart-icon' type="success" color="red"  />
+              <icon wx:else type="circle" class='cart-icon'  />
+          </view>
+          <view class="item_img"><image src="{{item.img}}"></image></view>
+          <view class="item_title">
+            <view class="name">{{item.name}}</view>
+            <view class="money">${{item.price}}</view>
+          </view>
+          <view class="item_left">
+            <view class="item_c" bindtap="remove_id" data-id="{{item.id}}"><image src="../images/goods_cancel.png"></image></view>
+            <view class="number">
+              <view class="number_c" bindtap="remove" data-id="{{item.id}}">-</view>
+              <view class="number_n">{{item.number}}</view>
+              <view class="number_c" bindtap="add" data-id="{{item.id}}">+</view>
+            </view>
+          </view>
+      </view>
+    </block>
+</scroll-view>
+<!-- 结算 -->
+<view class="all_goods">
+  <view class="all_icon"  bindtap="all_selected">
+    <icon wx:if="{{allselect}}" class='cart-icon' type="success" color="red"  />
+    <icon wx:else type="circle" class='cart-icon' />
+  </view>
+  <view class="all_select" style="margin-right:10%;">全选</view>
+  <view class="all_select">合计:</view>
+  <view class="all_price">${{allprice}}</view>
+  <view class="clearance" bindtap="check_out">去结算</view>
+</view>
+
+<!-- 密码输入框 -->
+<view wx:if='{{showPayPwdInput}}'>
+    <view class='bg_layer'></view>
+    <view class='input_main'>
+        <view class='input_title'>
+            <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+            <text>输入支付密码</text>
+        </view>
+        <view class='input_tip'><text>使用会员卡余额支付需要验证身份，验证通过后才可进行支付。</text></view>
+        <view class='input_row' catchtap='getFocus'>     
+            <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                <text wx:if='{{pwdVal.length>i}}'></text>
+            </view>
+        </view>
+        <view class='forget_pwd' catchtap='hidePayLayer'>忘记密码</view>
+        <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd'  maxlength='6'/>
+    </view>
+</view>

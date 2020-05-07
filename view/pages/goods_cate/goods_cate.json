@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "goodList-cate": "/components/goodList-cate/index",
+    "promotionGood": "/components/promotionGood/index"
+  } 
+}

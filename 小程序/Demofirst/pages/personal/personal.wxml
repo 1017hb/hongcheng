@@ -1,0 +1,67 @@
+<!--personal.wxml-->
+
+
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view class="personal">
+  <view class="p-top" bindtap="change_avatarUrl">
+    <view class="top-img">
+      <image src="{{avatarUrl}}"></image>
+    </view>
+    <view class="top_rig">
+      <image src="../images/me_right.png"></image>
+    </view>
+  </view>
+
+  <view class="kg"></view>
+
+  <view class="p-infor">
+    <view class="item">
+      <view class="title">昵称</view>
+      <view class="name" bindtap="change_name">
+        <input 
+          placeholder="请输入您的昵称" 
+          value="{{user_name}}"
+          maxlength="16"
+          focus="{{is_change_name}}"
+          adjust-position	="{{false}}"
+          hold-keyboard="{{true}}"
+          bindinput="get_name"
+          bindblur="set_name"
+          ></input>
+      </view>
+      <view class="isto"><image src="../images/me_right.png"></image></view>
+    </view>
+    <view class="item">
+      <view class="title">性别</view>
+      <view class="name">
+        <picker bindchange="change_sex" 
+        value="{{sex_index}}" 
+        range="{{sex_array}}">
+          <view class="picker">{{sex_array[sex_index]}}</view>
+        </picker>
+      </view>
+      <view class="isto"><image src="../images/me_right.png"></image></view>
+    </view>
+  
+  <view class="item">
+      <view class="title">手机号</view>
+      <view class="name" bindtap="get_phone" style="height:100rpx;line-height:100rpx;">{{user_phone}}</view>
+      <view class="isto"><image src="../images/me_right.png"></image></view>
+    </view>
+  
+  <view class="item">
+      <view class="title">生日</view>
+      <view class="name"> <picker mode="date" value="{{date}}" start="2000-01-01" end="2030-12-30" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker></view>
+      <view class="isto"><image src="../images/me_right.png"></image></view>
+    </view>
+  </view>
+  <view class="sure" bindtap="sure_info">保存</view>
+</view>
+
+

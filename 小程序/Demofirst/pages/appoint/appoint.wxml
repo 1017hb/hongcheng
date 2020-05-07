@@ -1,0 +1,52 @@
+<!--personal.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view class="appoint">
+  <view class="item">
+    <view class="item_title">预定日期:</view>
+    <view class="item_ctime">
+      <picker bindchange="change_day" value="{{date}}" mode="date" start="2000-01-01" end="2040-12-30" >
+            <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+  </view>
+ <view class="item">
+    <view class="item_title">服务时长:</view>
+    <view class="item_ctime">
+      <picker bindchange="change_time" value="{{index_time}}" range="{{time}}" >
+            <view class="picker">{{time[index_time]}}</view>
+      </picker>
+    </view>
+  </view>
+
+ <view class="item">
+    <view class="item_title">营业时段:</view>
+    <view class="item_ctime">  
+            <view class="picker">9:00-10:00</view>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="item_title">服务套餐:</view>
+    <view class="item_ctime">
+      <picker bindchange="change_price" value="{{index}}" range="{{array}}" >
+            <view class="picker">{{array[index]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="sure" catchtap="sure_data">确定</view>
+</view>
+
+<view class="modal" wx:if="{{modal}}">
+        <view class="mask"></view>
+        <view class="gopay_tip">
+          <view style='padding-top:16rpx'>
+            <text class="tip_title">提示\n</text>
+          </view>
+          <view style='padding:16rpx 40rpx'>
+            <text class="tip_content">请确定您所预定的拍摄信息!</text>
+          </view>
+          <button class='tip_confirm' catchtap="show_sure" >确认</button>
+        </view>
+   </view>

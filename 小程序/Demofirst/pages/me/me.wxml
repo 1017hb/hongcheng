@@ -1,0 +1,88 @@
+<!--me.wxml-->
+<view class="me">
+  <view class="me-personal" bindtap="to_personal">
+    <view class="p-img">
+      <image src="{{user_img}}"></image>
+    </view>
+    <view class="p-title">{{user_name}}</view>
+    <view class="p-to"><image src="../images/me_right.png"></image></view>
+  </view>
+
+  <view class="kg"></view>
+
+  <view class="me-order">
+    <view class="orders">
+      <image src="../images/pay.png"></image>
+      <view class="o-order">支付</view>
+    </view>
+     <view class="orders">
+      <image src="../images/deliver.png"></image>
+      <view class="o-order">待发货</view>
+    </view>
+    <view class="orders">
+      <image src="../images/harvest.png"></image>
+      <view class="o-order">待收货</view>
+    </view>
+     <view class="orders">
+      <image src="../images/discuss.png"></image>
+      <view class="o-order">待评价</view>
+    </view>
+  </view>
+
+   <view class="kg"></view>
+
+  <view class="me-more">
+    <view class="me-more-item">
+      <view class="img">
+          <image src="../images/location.png"></image>
+      </view>  
+      <view class="more-title">收货地址</view>
+    </view>
+    <view class="me-more-item" bindtap="shopping_cat">
+      <view class="img">
+          <image src="../images/shoppingcat.png"></image>
+      </view>  
+      <view class="more-title">购物车</view>
+    </view>
+     <view class="me-more-item">
+      <view class="img">
+          <image src="../images/notice.png"></image>
+      </view>  
+      <view class="more-title">系统通知</view>
+    </view>
+
+       <view class="kg"></view>
+
+    <view class="me-more-item">
+      <view class="img">
+          <image src="../images/vipcat.png"></image>
+      </view>  
+      <view class="more-title">会员卡</view>
+    </view>
+     <view class="me-more-item">
+      <view class="img">
+          <image src="../images/discount.png"></image>
+      </view>  
+      <view class="more-title">优惠券</view>
+    </view>
+     <view class="me-more-item">
+      <view class="img">
+          <image src="../images/points.png"></image>
+      </view>  
+      <view class="more-title">积分</view>
+    </view>
+     <view class="me-more-item">
+      <view class="img">
+          <image src="../images/deposit.png"></image>
+      </view>  
+      <view class="more-title">储蓄金</view>
+    </view>
+  </view>
+
+  <view class="me-logo">
+    <view class="img"><image src="../images/wx_login.png"></image></view>
+    <view >爱之选</view>
+  </view>
+
+</view>
+

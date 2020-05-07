@@ -1,0 +1,195 @@
+/**index.wxss**/
+.index-page{
+  background-color: #f8f8f8;
+}
+.index-swipt{
+  height: 350rpx;
+  width: 100%;
+}
+.server{
+  width: 100%;
+  margin-top: 26rpx;
+  border-bottom: 1px solid #f4f4f4;
+  background-color: #fff;
+}
+.server-item{
+  width: 24%;
+  margin: 3rpx;
+  float: left;
+  margin-bottom:40rpx;
+}
+.server-item-img{
+  margin: 0 auto;
+  width: 50%;
+  height: 70rpx;
+}
+.server-item-img image{
+  width: 100%;
+  height: 100%;
+}
+.server-item-title{
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 14rpx;
+}
+.securities{
+  width: 100%;
+  padding-top: 30rpx;
+     background-color: #fff;
+     padding-bottom: 40rpx;
+}
+.securities-more{
+  height: 140rpx;
+  width: 96%;
+  margin: 0 auto;
+  border-radius: 70rpx;
+  background-color:red; 
+  color: #fff;
+  border-bottom: 1px solid #f4f4f4;
+}
+.securities-more-left{
+  width: 18%;
+  float: left;
+  font-size: 50rpx;
+  padding-left: 6%;
+  font-weight: bold;
+  line-height: 140rpx;
+}
+.securities-more-moddle{
+    padding-top: 2%;
+    float: left;
+    width: 42%;
+   font-size: 26rpx;
+}
+.securities-more-moddle-name{
+  font-weight: bold;
+   font-size: 40rpx;
+}
+.securities-more-right{
+  float: left;
+  width: 26%;
+  margin-top:6%;
+  background-color: #fff; 
+  border-radius: 20rpx;
+  color: red;
+  font-size:34rpx;
+  height: 40%; 
+  
+}
+.kg{
+  background-color:#f4f4f4;
+  height: 40rpx;
+  width: 100%; 
+}
+.contact{
+  background-color: #fff;
+  width: 100%;
+  height: 180rpx;
+}
+.contact-left{
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  width: 16%;
+  float: left;
+}
+.contact-left image{
+  width: 120rpx;
+  height: 120rpx;
+    border-radius:100%;
+
+}
+.contact-moddle{
+  width: 40%;
+  float: left;
+    margin-top: 30rpx;
+    
+    margin-left: 20rpx;
+}
+.contact-moddle-title{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.contact-moddle-address{
+  margin-top: 10rpx;
+font-size: 26rpx;
+}
+.contact-right-weixin{
+  margin-top:40rpx;
+  width:12%;
+  float: left;
+  margin-left: 14%;
+}
+.contact-right-weixin image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius:100%;
+}
+.contact-right-phone{
+  margin-top:40rpx;
+  width:10%;
+  float: left;
+}
+.contact-right-phone image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius:100%;
+}
+.more-cameraman{
+  width:100%;
+  background-color:#fff; 
+}
+.more-cameraman-top{
+  width: 100%;
+}
+.more-cameraman-top-tub{
+  float: left;
+  width: 7%;
+  margin-top: 20rpx;
+   margin-left: 40rpx;
+  
+}
+.more-cameraman-top-tub image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.more-cameraman-top-cam{
+   float: left;
+  width: 30%;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+.more-cameraman-top-more{
+  float: right;
+  font-size: 22rpx;
+  margin-top: 24rpx;
+  margin-right: 30rpx;
+}
+.more-cameraman-bottom{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 220rpx;
+}
+.more-cameraman-bottom-item{
+  width: 200rpx;
+  height: 160rpx;
+  position: relative;
+ margin: 20rpx;
+  margin-top: 10rpx;
+}
+.more-cameraman-bottom-item image{
+  width: 200rpx;
+  height: 160rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.more-cameraman-bottom-name{
+  position: absolute;
+  top: 118rpx;
+  padding-left: 60rpx;
+  width: 140rpx;
+  background-color:rgb(110, 224, 110,0.1);
+}

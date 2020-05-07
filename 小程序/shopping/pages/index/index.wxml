@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view  class="index">
+    <view class="swiper_class">
+      <swiper style="width:100%;height:100%;" indicator-dots="true" autoplay="true" circular="true" vertical="{{vertical}}"  indicator-color="whilte"
+          interval="2000" duration="500" previous-margin="0rpx" next-margin="0rpx">
+          <block wx:for="{{swipt_background}}"  wx:key="{{index}}">
+            <swiper-item>
+              <image style="width:100%;" src="{{item.image}}" class="slide-image" catchtap="show" data-goodsid="{{item.acm}}"></image>
+            </swiper-item>
+          </block>
+      </swiper>
+    </view>
+
+<scroll-x scrolldata="{{scrolldata}}" />
+
+  <view class="recommend">
+    <view class="recomend-item"wx:for="{{recommend}}">
+      <image src="{{item.image}}"/>
+      <view>{{item.title}}</view>
+    </view>
+  </view>
+
+  <view class="feature-view">
+    <image src="../../images/recommend_bg.jpg"></image>
+  </view>
+
+  <view class="tab-control">
+    <view class="tab-control-item {{num == index ? 'active':'' }}" wx:for="{{titles}}" data-tab="{{index}}" bindtap="tabControll">
+      <view class="title">{{item}}</view>
+    </view>
+  </view>
+  
+
+  <view class="chao">
+    <block wx:for="{{newGoods}}"  wx:key="{{index}}">
+      <view class="ico-item" bindtap="toGoodsdetails" data-detail="{{item.iid}}">
+            <view class="ico-item-img"><image src="{{item.img}}"/></view>
+            <view class="ico-item-bottom">
+              <view class="ico-item-bottom-name">{{item.title}}</view>
+              <view class="ico-item-bottom-info">
+              <view class="ico-item-bottom-price">
+                <view class="ico-item-bottom-price-new">￥{{item.price}}</view>
+                <view class="ico-item-bottom-price-old">￥{{item.orgPrice}}</view>
+              </view>  
+              <view class="ico-item-bottom-add-car" catchtap="addCar" data-goodsId="{{index}}"><image src="/images/add.png"/></view>
+              </view>
+            </view>
+          </view>
+    </block>
+          
+
+          <view class="ico-item">
+            <view class="ico-item-img"><image src="/images/c2.jpg"/></view>
+            <view class="ico-item-bottom">
+              <view class="ico-item-bottom-name">咖啡</view>
+              <view class="ico-item-bottom-info">
+                <view style="display:flex;">
+                <view class="ico-item-bottom-price-new">￥26.36</view>
+                <view class="ico-item-bottom-price-old">￥26.36</view>
+                </view>
+                <view class="ico-item-bottom-add-car"><image src="/images/add.png"/></view>
+              </view>
+            </view>
+          
+          </view>
+  </view>
+
+    <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+  </view> 
+</view>
+   
+
+
+
+

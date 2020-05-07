@@ -1,0 +1,51 @@
+<view>
+   <view class="swiper_class">
+        <swiper style="width:100%;height:100%;" indicator-dots="true" autoplay="true" circular="true" vertical="{{vertical}}"  indicator-color="whilte"
+            interval="2000" duration="500" previous-margin="0rpx" next-margin="0rpx">
+            <block wx:for="{{swipt_background}}"  wx:key="{{index}}">
+              <swiper-item>
+                <image style="width:100%;" src="{{item}}" class="slide-image"></image>
+              </swiper-item>
+            </block>
+        </swiper>
+      </view>
+
+
+<view class="g-three">
+  <block wx:for="{{imgData}}"  wx:key="{{index}}">
+    <view class="th-item"><image src="{{item}}"></image></view>
+  </block>
+</view>
+
+
+<view>
+  <view class="c-items">
+    <view class="c-items-top">
+      <view class="c-items-top-a">坚果礼盒  系列</view>
+      <view class="c-items-top-b">颗粒饱满 奇味无穷</view>
+    </view>
+  <view class="c-goods">
+    <block wx:for="{{goodsData}}"  wx:key="{{index}}">
+      <view class="ico-item" bindtap="toGoodsdetails" data-detail="{{item.id}}">
+            <view class="ico-item-img"><image src="{{item.img}}"/></view>
+            <view class="ico-item-bottom">
+              <view class="ico-item-bottom-name">{{item.name}}</view>
+              <view class="ico-item-bottom-info">
+                <view class="ico-item-bottom-price-new">￥{{item.newPrice}}</view>
+                <view class="ico-item-bottom-price-old">￥{{item.oldPrice}}</view>
+                <view class="ico-item-bottom-add-car nav"><image src="/images/add.png"/></view>
+              </view>
+              <view class="ico-item-bottom-number">月售500+件</view>
+            </view>
+          </view>
+    </block>
+  </view>
+  
+  </view>
+   
+
+</view>
+
+
+
+</view>

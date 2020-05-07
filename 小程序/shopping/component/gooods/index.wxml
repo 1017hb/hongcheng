@@ -1,0 +1,22 @@
+
+  <view class="chao">
+    <block wx:for="{{newGoods}}"  wx:key="{{index}}">
+      <view class="ico-item" bindtap="toGoodsdetails" data-detail="{{item.iid}}">
+            <view class="ico-item-img"><image src="{{item.img}}"/></view>
+            <view class="ico-item-bottom">
+              <view class="ico-item-bottom-name">{{item.title}}</view>
+              <view class="ico-item-bottom-info">
+                <view class="ico-item-bottom-price">
+                  <view class="ico-item-bottom-vip">{{item.price}}</view>
+                  <view class="ico-item-bottom-price-new">￥<text>{{item.orgPrice}}</text></view>
+                </view>  
+              <view class="ico-item-bottom-add-car" catchtap="addCar" data-goodsId="{{index}}"><image src="/images/add.png"/></view>
+              </view>
+              <view class="ico-price-old">吊牌价: ￥199.00</view>
+              
+            </view>
+          </view>
+    </block>
+</view>
+
+
